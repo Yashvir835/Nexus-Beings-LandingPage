@@ -10,7 +10,7 @@ import {
 } from "@tabler/icons-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import HamburgerMenu from "./ui/hamburgerMenu";
 export function Navbar() {
   const logo = [
     {
@@ -115,12 +115,9 @@ export function Navbar() {
       </div>
 
       {/* Mobile Right Dock Positioned at Top Left without margin */}
-      <div className="md:hidden fixed top-0  left-0 z-50">
-        <FloatingDock
-          mobileClassName="mt-4" // No extra margin or positioning classes here.
-          desktopClassName="hidden"
-          items={links}
-        />
+      <div className="md:hidden mt-8 fixed top-0  left-0 z-50">
+           
+        <HamburgerMenu links ={links}/>
       </div>
     </motion.div>
   );
