@@ -68,7 +68,7 @@ export default function Page() {
 
         {/* Text Container */}
         <motion.div
-          className="absolute z-20 flex flex-col mb-16 bottom-20 mb-4 left-1/2 transform -translate-x-1/2 items-center"
+          className="absolute z-20 flex flex-col  bottom-20 mb-4 left-1/2 transform -translate-x-1/2 items-center"
         >
           <motion.div
             className="space-y-4"
@@ -81,18 +81,21 @@ export default function Page() {
           >
             <motion.h2
               className="text-xl w-full pl-4 md:text-2xl font-bold md:font-extrabold"
-              variants={{ hidden: { y: 20 }, visible: { y: 0 } }}
+              variants={{ hidden: { y: 20 }, visible: { y: -10} }}
               transition={{ delay: 2, ease: "easeInOut", duration: 2 }}
             >
               Nexus Beings
             </motion.h2>
-            <motion.p className="text-sm w-full md:text-xl font-semibold text-gray-600 overflow-hidden">
+            <motion.p className="text-sm w-full md:text-xl font-semibold text-gray-600 overflow-hidden"
+              variants={{ hidden: { y: 10 }, visible: { y: -20 } }}
+              transition={{ delay: 2, ease: "easeInOut", duration: 2 }}
+            >
               Beyond humanware.
             </motion.p>
           </motion.div>
         </motion.div>
         {/* Centered Scroll Button */}
-        <div className="fixed bottom-1 left-1/2 -translate-x-1/2 z-50 w-full">
+        <div className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 w-full">
           <ArrowButton nextPage="/landingPage/overView" />
         </div>
 

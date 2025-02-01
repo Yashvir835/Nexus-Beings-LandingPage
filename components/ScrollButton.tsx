@@ -10,7 +10,7 @@ export const ArrowButton = ({ nextPage }: ArrowButtonProps) => {
   const router = useRouter();
 
   return (
-    <div className="fixed bottom-2 left-1/2 -translate-x-1/2 z-50 pb-4"> {/* Added padding-bottom */}
+    <div className="fixed bottom-0 mt-4 left-1/2 -translate-x-1/2 z-50 pb-4"> {/* Added padding-bottom */}
       <motion.button
         onClick={() => router.push(nextPage)}
         className="p-4 bg-gray-100/30 dark:bg-slate-800/30 rounded-full backdrop-blur-sm hover:backdrop-blur-md transition-all"
