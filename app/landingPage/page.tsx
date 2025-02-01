@@ -12,13 +12,13 @@ export default function Page() {
       >
         {/* Sign In Button - Hidden on devices with width less than 768px */}
         <motion.div
-          className="hidden md:flex absolute top-0 z-20 right-4 mt-10 items-center justify-center"
+          className="hidden md:flex absolute top-0 z-20 right-2 mt-4 items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 6 }}
         >
           <motion.button
-            className="relative px-6 py-3 rounded-full bg-gray-200 dark:bg-neutral-400 flex items-center justify-center overflow-hidden"
+            className="relative px-4 py-1 rounded-full bg-gray-200 dark:bg-slate-300 flex items-center justify-center overflow-hidden"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5 }}
           >
@@ -26,7 +26,7 @@ export default function Page() {
 
             {/* Arrow inside the button */}
             <motion.div
-              className="relative w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center"
+              className="relative w-8 h-8 rounded-full  flex items-center justify-center"
               animate={{
                 x: [0, 10, 0],
               }}
