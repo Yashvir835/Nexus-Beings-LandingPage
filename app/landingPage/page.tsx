@@ -53,7 +53,7 @@ export default function Page() {
         </motion.div>
 
         {/* Video Container - Full Width and Height */}
-        <motion.div className="absolute top-0 left-0 w-full h-full z-0">
+        <motion.div className="absolute top-0 left-0 w-full  h-full z-0">
           <video
             className="object-cover w-full h-full"
             autoPlay
@@ -68,7 +68,7 @@ export default function Page() {
 
         {/* Text Container */}
         <motion.div
-          className="absolute z-20 flex flex-col bottom-20 mb-4 left-1/2 transform -translate-x-1/2 items-center"
+          className="absolute z-20 flex flex-col mb-16 bottom-20 mb-4 left-1/2 transform -translate-x-1/2 items-center"
         >
           <motion.div
             className="space-y-4"
@@ -86,13 +86,13 @@ export default function Page() {
             >
               Nexus Beings
             </motion.h2>
-            <motion.p className="text-sm w-full md:text-xl font-semibold text-gray-600">
+            <motion.p className="text-sm w-full md:text-xl font-semibold text-gray-600 overflow-hidden">
               Beyond humanware.
             </motion.p>
           </motion.div>
         </motion.div>
         {/* Centered Scroll Button */}
-        <div className="fixed bottom-2 item-center mt-4 z-50">
+        <div className="fixed bottom-1 left-1/2 -translate-x-1/2 z-50 w-full">
           <ArrowButton nextPage="/landingPage/overView" />
         </div>
 

@@ -10,20 +10,19 @@ export const ArrowButton = ({ nextPage }: ArrowButtonProps) => {
   const router = useRouter();
 
   return (
-    < div className="fixed bottom-2 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2">
-
-    <motion.button
-      onClick={() => router.push(nextPage)}
-      className="p-4 bg-gray-100/30 dark:bg-slate-800/30 rounded-full backdrop-blur-sm hover:backdrop-blur-md transition-all"
-      initial={{ opacity: 0.7 }}
-      whileHover={{
-        scaleY: 1.3,
-        scaleX: 1.3,
-        transition: { duration: 0.3 }
-      }}
-      whileTap={{ scale: 0.9 }}
-    >
-     
+    <div className="fixed bottom-2 left-1/2 -translate-x-1/2 z-50 pb-4"> {/* Added padding-bottom */}
+      <motion.button
+        onClick={() => router.push(nextPage)}
+        className="p-4 bg-gray-100/30 dark:bg-slate-800/30 rounded-full backdrop-blur-sm hover:backdrop-blur-md transition-all"
+        initial={{ opacity: 0.7 }}
+        whileHover={{
+          scale: 1.3, // Use uniform scale instead of scaleX/scaleY
+          transition: { duration: 0.3 }
+        }}
+        whileTap={{ scale: 0.9 }}
+        style={{ transformOrigin: "center bottom" }} // Add this line
+      >
+        <div className="flex flex-col items-center gap-2">
           <motion.span
             className="text-xs font-medium text-gray-600 dark:text-gray-300"
             animate={{
@@ -41,7 +40,7 @@ export const ArrowButton = ({ nextPage }: ArrowButtonProps) => {
 
           {/* Animated Arrow */}
           <motion.div
-            className="w-6 h-6 pl-1 flex items-center justify-center"
+            className="w-6 h-6 flex items-center justify-center"
             animate={{
               y: [0, 5, 0],
             }}
@@ -64,8 +63,8 @@ export const ArrowButton = ({ nextPage }: ArrowButtonProps) => {
               <path d="M12 5v14M19 12l-7 7-7-7" />
             </motion.svg>
           </motion.div>
-      
-    </motion.button>
+        </div>
+      </motion.button>
     </div>
   );
 };
