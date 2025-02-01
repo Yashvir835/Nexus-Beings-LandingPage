@@ -1,6 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-
+import {ArrowButton} from "@/components/ScrollButton";
 export default function Page() {
   return (
     <AnimatePresence>
@@ -68,7 +68,7 @@ export default function Page() {
 
         {/* Text Container */}
         <motion.div
-          className="absolute z-20 flex flex-col bottom-16 left-1/2 transform -translate-x-1/2 items-center"
+          className="absolute z-20 flex flex-col bottom-20 mb-4 left-1/2 transform -translate-x-1/2 items-center"
         >
           <motion.div
             className="space-y-4"
@@ -91,6 +91,10 @@ export default function Page() {
             </motion.p>
           </motion.div>
         </motion.div>
+        {/* Centered Scroll Button */}
+        <div className="fixed bottom-2 item-center mt-4 z-50">
+          <ArrowButton nextPage="/landingPage/overView" />
+        </div>
 
       </motion.div>
     </AnimatePresence>
