@@ -1,10 +1,6 @@
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <div>
-      <h1>
-        hi this is yashvir malik
-      </h1>
-    </div>
-  );
+  redirect("/landingPage"); // Redirect to landing page
+  return null;
 }

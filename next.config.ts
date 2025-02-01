@@ -1,7 +1,11 @@
+// next.config.ts
 import type { NextConfig } from "next";
-
+import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
+const withVanillaExtract = createVanillaExtractPlugin();
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ['assets.aceternity.com'],
+  },
 };
 
-export default nextConfig;
+export default withVanillaExtract(nextConfig);
