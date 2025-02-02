@@ -72,9 +72,9 @@ export function Navbar() {
         type: "spring",
         stiffness: 50,
         damping: 20,
-        delay: 0.5,
+        delay: 0.2,
       }}
-      className="flex items-center justify-between w-full shadow-md z-30 relative"
+      className="flex items-center justify-between w-full shadow-md z-[999] relative"
     >
       {/* Desktop View: Logo and Navigation in a single row */}
       <div className="hidden md:flex items-center gap-2 absolute left-1/2 top-4 transform -translate-x-1/2 z-50">

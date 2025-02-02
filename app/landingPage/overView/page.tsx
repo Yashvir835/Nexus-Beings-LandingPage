@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-
+import {ArrowButton} from '@/components/ui/BlueArrow';
 const TEXTS = [
   "for easing the business work",
   "for enhancing productivity",
@@ -35,7 +35,7 @@ export default function Page() {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-stone-200 min-h-screen">
       {/* Use container and relative paddings for responsive layout */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -88,12 +88,12 @@ export default function Page() {
           </motion.h2>
         </div>
 
-        <div className="flex flex-col md:mt-40 space-y-16 w-full md:w-2/3">
+        <div className="flex flex-col md:mt-40 space-y-32 md:space-y-16 w-full md:w-2/3">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-md md:text-md  font-extralight leading-[1.8]"
+            className="text-md md:text-md  font-extralight ml-8 md:ml-0"
           >
             Nexus Beings is revolutionizing how we interact with the digital human world{' '}
             <motion.span
@@ -122,7 +122,7 @@ export default function Page() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
             // Added md:self-start to align left on md and larger screens
-            className="flex justify-center md:justify-start items-center gap-6 cursor-pointer self-center md:self-start"
+            className="flex justify-center  md:justify-start items-center gap-6 cursor-pointer self-center md:self-start"
             onHoverStart={handleArrowHover}
           >
             <div className="w-8 h-4 mt-1 rounded-full border border-blue-600 flex items-center justify-center relative">
@@ -155,7 +155,11 @@ export default function Page() {
               Join Community
             </motion.span>
           </motion.div>
+          
         </div>
+         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-50 w-full">
+                  <ArrowButton nextPage="/landingPage/Mission" />
+                </div>
       </motion.div>
     </div>
   );

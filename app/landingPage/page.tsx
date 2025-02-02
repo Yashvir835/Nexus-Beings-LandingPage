@@ -7,9 +7,9 @@ export default function Page() {
     <AnimatePresence>
       <motion.div
         className="relative flex flex-col items-center justify-center min-h-screen p-2 overflow-hidden"
-        initial={{ opacity: 0, filter: "blur(10px)" }}
+        initial={{ opacity: 0, filter: "blur(5px)" }}
         animate={{ opacity: 1, filter: "blur(0px)" }}
-        transition={{ duration: 2.2, ease: "easeInOut" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
       >
         {/* Blur Overlay */}
         <motion.div
@@ -25,7 +25,7 @@ export default function Page() {
           className="hidden md:flex absolute top-0 z-20 right-2 mt-4 items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 6 }}
+          transition={{ delay: 1, duration: 4 }}
         >
           <motion.button
             className="relative px-4 py-1 rounded-full bg-gray-200 dark:bg-slate-300 flex items-center justify-center overflow-hidden"

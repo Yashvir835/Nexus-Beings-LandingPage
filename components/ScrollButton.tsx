@@ -17,7 +17,6 @@ export const ArrowButton = ({ nextPage }: ArrowButtonProps) => {
         initial={{ opacity: 0.7 }}
         whileHover={{
           scale: 1.3, // Use uniform scale instead of scaleX/scaleY
-          transition: { duration: 0.3 }
         }}
         whileTap={{ scale: 0.9 }}
         style={{ transformOrigin: "center bottom" }} // Add this line
