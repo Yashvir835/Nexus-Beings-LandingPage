@@ -100,7 +100,7 @@ export default function Page() {
               <span className="text-md md:text-md font-extralight">
                 Make humans better—a lot better
               </span>
-              <div className="mt-4 p-[0.1] bg-stone-100 w-full" />
+              <div className="mt-4 p-[0.5] bg-stone-100 w-full" />
             </div>
           </motion.div>
 
@@ -123,7 +123,7 @@ export default function Page() {
               <span className="text-md md:text-md font-extralight">
                 Lead the future of digital human
               </span>
-              <div className="mt-4 p-[0.1] bg-stone-100 w-full" />
+              <div className="mt-4 p-[0.5] bg-stone-100 w-full" />
             </div>
           </motion.div>
 
@@ -146,7 +146,7 @@ export default function Page() {
               <span className="text-md md:text-md font-extralight">
                 Simply heads-up computing
               </span>
-              <div className="mt-4 p-[0.1] bg-stone-100 w-full" />
+              <div className="mt-4 p-[0.5] bg-stone-100 w-full" />
             </div>
           </motion.div>
         </div>
@@ -165,7 +165,7 @@ export default function Page() {
               variants={textVariant}
               custom={0.3 + idx * 0.1}
             >
-              <div className="mt-4 p-[0.1] bg-blue-600 w-2" />
+              <div className="mt-4 p-[0.5] bg-blue-600 w-2" />
               <motion.h1
                 initial="hidden"
                 animate="visible"
@@ -191,7 +191,7 @@ export default function Page() {
 
         {/* How We Talk – Centered Container */}
         <div className="mx-auto w-full max-w-4xl px-4">
-          <div className="mt-4 p-[0.1] bg-stone-100 w-full" />
+          <div className="mt-4 p-[0.5] bg-stone-100 w-full" />
           <motion.div
             className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12"
             initial="hidden"
@@ -207,7 +207,7 @@ export default function Page() {
               variants={textVariant}
               custom={0.7}
             >
-              <span className="text-sm md:text-xs text-gray-400 font-extralight">
+              <span className="text-sm ml-6 md:ml-0 md:text-xs text-gray-400 font-extralight">
                 0.4
               </span>
               <h2 className="text-sm text-white md:text-xs font-extralight">
