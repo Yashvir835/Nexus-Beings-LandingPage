@@ -16,7 +16,7 @@ const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     // Outer container with a light slate background and some padding.
-    <div className="bg-zinc-200 dark:bg-slate-300 p-1 rounded-xl shadow-sm">
+    <div className="bg-zinc-200 opacity-50 dark:bg-slate-300 p-1 rounded-xl shadow-sm">
       {/* Flex container to arrange items in a row */}
       <ul className="flex flex-row gap-1">
         {links.map((link, index) => (

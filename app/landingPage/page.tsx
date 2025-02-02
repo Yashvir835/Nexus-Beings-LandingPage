@@ -1,16 +1,26 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import {ArrowButton} from "@/components/ScrollButton";
+import { ArrowButton } from "@/components/ScrollButton";
+
 export default function Page() {
   return (
     <AnimatePresence>
       <motion.div
-        className="relative flex flex-col items-center justify-center min-h-screen p-2"
-        initial={{ opacity: 0, filter: 'blur(10px)' }} // Initial blurred state
-        animate={{ opacity: 1, filter: 'blur(0px)' }} // Animate to clear state
-        transition={{ duration: 2.2, ease: 'easeInOut' }}
+        className="relative flex flex-col items-center justify-center min-h-screen p-2 overflow-hidden"
+        initial={{ opacity: 0, filter: "blur(10px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 2.2, ease: "easeInOut" }}
       >
-        {/* Sign In Button - Hidden on devices with width less than 768px */}
+        {/* Blur Overlay */}
+        <motion.div
+          className="absolute inset-0 bg-white"
+          initial={{ y: -100, opacity: 1 }}
+          animate={{ y: "100%", opacity: 0 }}
+          transition={{ duration: 2.2, ease: "easeInOut" }}
+          style={{ mixBlendMode: "screen", pointerEvents: "none" }}
+        />
+
+        {/* Sign In Button */}
         <motion.div
           className="hidden md:flex absolute top-0 z-20 right-2 mt-4 items-center justify-center"
           initial={{ opacity: 0 }}
@@ -23,18 +33,10 @@ export default function Page() {
             transition={{ duration: 0.5 }}
           >
             <span className="mr-2">Sign In</span>
-
-            {/* Arrow inside the button */}
             <motion.div
-              className="relative w-8 h-8 rounded-full  flex items-center justify-center"
-              animate={{
-                x: [0, 10, 0],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 1,
-                ease: "easeInOut",
-              }}
+              className="relative w-8 h-8 rounded-full flex items-center justify-center"
+              animate={{ x: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 1, ease: "easeInOut" }}
             >
               <motion.svg
                 className="absolute text-gray-800 w-4 h-4"
@@ -52,8 +54,8 @@ export default function Page() {
           </motion.button>
         </motion.div>
 
-        {/* Video Container - Full Width and Height */}
-        <motion.div className="absolute top-0 left-0 w-full  h-full z-0">
+        {/* Dynamic Video Container */}
+        <motion.div className="absolute inset-0 flex items-center justify-center z-0">
           <video
             className="object-cover w-full h-full"
             autoPlay
@@ -68,7 +70,7 @@ export default function Page() {
 
         {/* Text Container */}
         <motion.div
-          className="absolute z-20 flex flex-col  bottom-20 mb-4 left-1/2 transform -translate-x-1/2 items-center"
+          className="absolute z-20 flex flex-col bottom-20 mb-4 left-1/2 transform -translate-x-1/2 items-center"
         >
           <motion.div
             className="space-y-4"
@@ -81,12 +83,13 @@ export default function Page() {
           >
             <motion.h2
               className="text-xl w-full pl-4 md:text-2xl font-bold md:font-extrabold"
-              variants={{ hidden: { y: 20 }, visible: { y: -10} }}
+              variants={{ hidden: { y: 20 }, visible: { y: -10 } }}
               transition={{ delay: 2, ease: "easeInOut", duration: 2 }}
             >
               Nexus Beings
             </motion.h2>
-            <motion.p className="text-sm w-full md:text-xl font-semibold text-gray-600 overflow-hidden"
+            <motion.p
+              className="text-sm w-full md:text-xl font-semibold text-gray-600 overflow-hidden"
               variants={{ hidden: { y: 10 }, visible: { y: -20 } }}
               transition={{ delay: 2, ease: "easeInOut", duration: 2 }}
             >
@@ -94,11 +97,11 @@ export default function Page() {
             </motion.p>
           </motion.div>
         </motion.div>
+
         {/* Centered Scroll Button */}
-        <div className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 w-full">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-50 w-full">
           <ArrowButton nextPage="/landingPage/overView" />
         </div>
-
       </motion.div>
     </AnimatePresence>
   );
