@@ -13,7 +13,7 @@ const pages = [
   '/landingPage/product'
 ];
 
-const SWIPE_THRESHOLD = 30; // Minimum scroll/touch distance to trigger a transition
+const SWIPE_THRESHOLD = 60; // Minimum scroll/touch distance to trigger a transition
 
 export default function PageTransitionLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter(); // Next.js router for navigation
@@ -83,6 +83,24 @@ export default function PageTransitionLayout({ children }: { children: React.Rea
     }
   };
 
+  // Optionally prevent default touchmove behavior to further avoid pull-to-refresh
+  useEffect(() => {
+    const handleTouchMove = (e: TouchEvent) => {
+      if (containerRef.current) {
+        const isAtTop = containerRef.current.scrollTop === 0;
+        if (isAtTop) {
+          e.preventDefault();
+        }
+      }
+    };
+
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+
   useEffect(() => {
     window.addEventListener('wheel', handleWheel);
     window.addEventListener('touchstart', handleTouchStart);
@@ -106,7 +124,11 @@ export default function PageTransitionLayout({ children }: { children: React.Rea
   }, [pathname]);
 
   return (
-    <div ref={containerRef} className="fixed inset-0 overflow-y-auto">
+    <div
+      ref={containerRef}
+      style={{ overscrollBehaviorY: 'none' }} // Prevent native pull-to-refresh on mobile
+      className="fixed inset-0 overflow-y-auto"
+    >
       {children}
     </div>
   );

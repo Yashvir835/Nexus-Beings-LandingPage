@@ -25,9 +25,9 @@ const characterVariants = {
 
 export default function Page() {
   return (
-    <div>
-      {/* Main scrollable container */}
-      <div className="flex flex-col items-center justify-start bg-zinc-800 p-4 space-y-8 overflow-y-auto overflow-x-hidden min-h-screen scrollbar-hide">
+    <div className="scrollbar-hide h-screen overflow-y-auto">
+       {/*  outer container */}
+      <div className="flex flex-col items-center justify-start bg-zinc-800 p-4 space-y-8">
         {/* Header Section */}
         <motion.div
           className="grid grid-cols-1 items-center mt-12 md:mt-32 gap-4 px-4"
@@ -153,7 +153,7 @@ export default function Page() {
       </div>
 
       {/* Footer */}
-      <div className="w-full bg-black p-4">
+      <div className="w-full  bg-black p-4">
         <div className="grid grid-cols-1 md:grid-cols-3 md:ml-48 mt-4 md:mt-12 gap-4">
           {['Industries', 'Core Business', 'Domain'].map((title, idx) => (
             <motion.div

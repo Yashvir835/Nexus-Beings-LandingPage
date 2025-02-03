@@ -63,7 +63,7 @@ export default function Page() {
             muted
             playsInline
           >
-            <source src="/video/v3.mp4" type="video/mp4" />
+            <source src="/video/v4.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </motion.div>

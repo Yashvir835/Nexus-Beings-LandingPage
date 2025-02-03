@@ -50,13 +50,13 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ links }) => {
         <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
           <div className="relative w-8 h-8">
             <motion.div
-              className="absolute top-1/2 left-0 right-0 h-[2px] bg-neutral-800 dark:bg-neutral-500"
+              className="absolute top-1/2 left-0 right-0 h-[2px] bg-neutral-600 dark:bg-white-500"
               animate={isOpen ? topLine.open : topLine.closed}
               style={{ originX: 0.5, originY: 0.5 }}
               transition={{ duration: 0.4 }}
             />
             <motion.div
-              className="absolute top-1/2 left-0 right-0 h-[2px] bg-neutral-800 dark:bg-neutral-500"
+              className="absolute top-1/2 left-0 right-0 h-[2px] bg-neutral-600 dark:bg-neutral-500"
               animate={isOpen ? bottomLine.open : bottomLine.closed}
               style={{ originX: 0.5, originY: 0.5 }}
               transition={{ duration: 0.4 }}
