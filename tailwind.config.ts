@@ -7,6 +7,11 @@ export default {
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./app/**/*.{js,ts,jsx,tsx,mdx}"
 	],
+	safelist: [
+		'bg-stone-100',
+		'bg-blue-600',
+		'p-[0.5]',
+	],
 	theme: {
 		extend: {
 			fontWeight: {
