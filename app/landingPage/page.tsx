@@ -70,7 +70,7 @@ export default function Page() {
 
         {/* Text Container */}
         <motion.div
-          className="absolute z-20 flex flex-col bottom-20 mb-4 left-1/2 transform -translate-x-1/2 items-center"
+          className="absolute z-20 flex flex-col bottom-20 mb-12 md:mb-4 left-1/2 transform -translate-x-1/2 items-center"
         >
           <motion.div
             className="space-y-4"
@@ -89,7 +89,7 @@ export default function Page() {
               Nexus Beings
             </motion.h2>
             <motion.p
-              className="text-sm w-full md:text-xl font-semibold text-gray-600 overflow-hidden"
+              className="text-sm w-full ml-3 md:ml-0  md:text-xl font-semibold text-gray-600 overflow-hidden"
               variants={{ hidden: { y: 10 }, visible: { y: -20 } }}
               transition={{ delay: 2, ease: "easeInOut", duration: 2 }}
             >
@@ -99,7 +99,7 @@ export default function Page() {
         </motion.div>
 
         {/* Centered Scroll Button */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-50 w-full">
+        <div className="absolute bottom-0 mb-12 md:mb-0  left-1/2 -translate-x-1/2 z-50 w-full">
           <ArrowButton nextPage="/landingPage/overView" />
         </div>
       </motion.div>

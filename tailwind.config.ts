@@ -9,6 +9,10 @@ export default {
 	],
 	theme: {
 		extend: {
+			fontWeight: {
+				slim: "2", // Custom font-weight 10
+			},
+
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',

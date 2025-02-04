@@ -27,10 +27,10 @@ export default function Page() {
   return (
     <div className="scrollbar-hide h-screen overflow-y-auto">
        {/*  outer container */}
-      <div className="flex flex-col items-center justify-start bg-zinc-800 p-4 space-y-8">
+      <div className="flex flex-col items-center justify-start bg-zinc-800 p-4 space-y-12">
         {/* Header Section */}
         <motion.div
-          className="grid grid-cols-1 items-center mt-12 md:mt-32 gap-4 px-4"
+          className="grid grid-cols-1 items-center mt-32 gap-4 px-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -80,7 +80,8 @@ export default function Page() {
         </motion.div>
 
         {/* Mission, Vision, and Ambition Section */}
-        <div className="w-full max-w-4xl mx-auto px-4 space-y-4">
+        {/* here padding add margin in the bottom just remember that */}
+        <div className="w-full max-w-4xl mx-auto px-4 space-y-4 pb-24">
           {/* Our Mission */}
           <motion.div
             className="grid grid-cols-1 md:grid-cols-5 items-center text-white p-6"
@@ -190,7 +191,7 @@ export default function Page() {
         </div>
 
         {/* How We Talk – Centered Container */}
-        <div className="mx-auto w-full max-w-4xl px-4">
+        <div className="mx-auto w-full pb-28 md:pb-4 max-w-4xl px-4">
           <div className="mt-4 p-[0.5] bg-stone-100 w-full" />
           <motion.div
             className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12"

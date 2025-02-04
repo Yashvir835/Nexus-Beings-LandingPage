@@ -1,11 +1,13 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import {ArrowButton} from '@/components/ui/BlueArrow';
 const TEXTS = [
-  "for easing the business work",
-  "for enhancing productivity",
-  "for seamless integration"
+  "empowering",    // Empowering individuals through seamless digital integration
+  "redefining",    // Redefining the boundaries of human-tech interaction
+  "transforming",  // Transforming everyday experiences into extraordinary ones
+  "elevating",     // Elevating human potential with intelligent interfaces
+  "inspiring"      // Inspiring new dimensions of creativity and connection
 ];
 
 export default function Page() {
@@ -16,7 +18,7 @@ export default function Page() {
     // Update the text every 5 seconds for a smoother experience.
     const interval = setInterval(() => {
       setCurrentText(prev => TEXTS[(TEXTS.indexOf(prev) + 1) % TEXTS.length]);
-    }, 5000);
+    }, 7000);
     return () => clearInterval(interval);
   }, []);
 
@@ -36,7 +38,7 @@ export default function Page() {
 
   return (
     <div className="bg-stone-200 min-h-screen">
-      {/* Use container and relative paddings for responsive layout */}
+      {/*  paddings for responsive layout */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -48,7 +50,7 @@ export default function Page() {
         }}
         className="container mx-auto flex flex-col md:flex-row justify-center items-start px-4 py-8 pt-20 md:pt-24"
       >
-        <div className="flex flex-col items-center md:ml-16  md:items-start mt-16 md:mt-40 space-y-2 w-full md:w-1/3 mb-8 md:mb-0">
+        <div className="flex flex-col  items-center md:ml-16  md:items-start mt-24 md:mt-40 space-y-2 w-full md:w-1/3 mb-8 md:mb-0">
           <motion.h2
             initial="hidden"
             animate="visible"
@@ -89,33 +91,45 @@ export default function Page() {
         </div>
 
         <div className="flex flex-col md:mt-40 space-y-32 md:space-y-16 w-full md:w-2/3">
+        <div className='p-4 md:p-0 mt-8 md:mt-0'>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-md md:text-md  font-extralight ml-8 md:ml-0"
+            className="text-md m  font-extralight "
           >
             Nexus Beings is revolutionizing how we interact with the digital human world{' '}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={currentText}
+                initial={{ filter: "blur(8px)", opacity: 0 }}
+                animate={{ filter: "blur(0px)", opacity: 1 }}
+                exit={{
+                  opacity: 0,
+                  filter: "blur(8px)",
+                  transition: { duration: 0.8 }
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 50,
+                  damping: 15
+                }}
+                className="text-blue-600 font-thin inline-block"
+              >
+                {currentText}
+              </motion.span>
+            </AnimatePresence>
             <motion.span
-              key={currentText}
-              initial={{ filter: "blur(8px)", opacity: 0 }}
-              animate={{ filter: "blur(0px)", opacity: 1 }}
-              exit={{
-                opacity: 0,
-                filter: "blur(8px)",
-                transition: { duration: 0.5 }
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 50,
-                damping: 15,
-                delay: 0
-              }}
-              className="text-blue-600 font-thin inline-block"
-            >
-              {currentText}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-md md:text-md  font-extralight ">
+             {' '} the future of digital connection.
             </motion.span>
           </motion.p>
+          </div>
+
           {/* Arrow and community section */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -157,7 +171,7 @@ export default function Page() {
           </motion.div>
           
         </div>
-         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-50 w-full">
+         <div className="absolute bottom-0 mb-16 md:mb-0 left-1/2 -translate-x-1/2 z-50 w-full">
                   <ArrowButton nextPage="/landingPage/Mission" />
                 </div>
       </motion.div>

@@ -34,14 +34,14 @@ export function Navbar() {
       href: "/landingPage/Mission",
     },
     {
-      title: "Pricing",
+      title: "Programs",
       icon: <MdAttachMoney className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-      href: "/landingPage/Pricing",
+      href: "/landingPage/Programs",
     },
     {
-      title: "Product",
+      title: "Updates",
       icon: <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-      href: "/landingPage/product",
+      href: "/landingPage/Updates",
     },
   ]
 
@@ -55,12 +55,12 @@ export function Navbar() {
       href: "/landingPage/Mission",
     },
     {
-      title: "Pricing",
-      href: "/landingPage/Pricing",
+      title: "Programs",
+      href: "/landingPage/Programs",
     },
     {
-      title: "Product",
-      href: "/landingPage/product",
+      title: "Updates",
+      href: "/landingPage/Updates",
     },
   ]
 
