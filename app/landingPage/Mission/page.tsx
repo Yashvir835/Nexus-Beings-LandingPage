@@ -101,8 +101,12 @@ export default function Page() {
               <span className="text-md md:text-md font-extralight">
                 Make humans better—a lot better
               </span>
-              <div className="mt-4 p-[0.5] bg-stone-100 w-full" />
-            </div>
+              {/* this is the white line undet the mission  */}
+              <div className="flex items-center justify-center my-4 w-full">
+                <div className="flex-grow border-t border-white mx-0">
+
+                </div>
+              </div>            </div>
           </motion.div>
 
           {/* Our Vision */}
@@ -124,8 +128,15 @@ export default function Page() {
               <span className="text-md md:text-md font-extralight">
                 Lead the future of digital human
               </span>
-              <div className="mt-4 p-[0.5] bg-stone-100 w-full" />
-            </div>
+              {/* this is the white line undet the vision */}
+              <div className="flex items-center justify-center my-4 w-full">
+                <div className="flex-grow border-t border-white mx-0">
+
+                </div>
+              </div>
+         
+              
+                 </div>
           </motion.div>
 
           {/* Our Ambition */}
@@ -147,8 +158,12 @@ export default function Page() {
               <span className="text-md md:text-md font-extralight">
                 Simply heads-up computing
               </span>
-              <div className="mt-4 p-[0.5] bg-stone-100 w-full" />
-            </div>
+              {/* this is the white line undet the ambition */}
+              <div className="flex items-center justify-center my-4 w-full">
+                <div className="flex-grow border-t border-white mx-0">
+
+                </div>
+              </div>            </div>
           </motion.div>
         </div>
       </div>
@@ -192,8 +207,12 @@ export default function Page() {
 
         {/* How We Talk – Centered Container */}
         <div className="mx-auto w-full pb-28 md:pb-4 max-w-4xl px-4">
-          <div className="mt-4 p-[0.5] bg-stone-100 w-full" />
-          <motion.div
+          {/* this is the white line undet the how we talk */}
+          <div className="flex items-center justify-center my-4 w-full">
+            <div className="flex-grow border-t border-white mx-0">
+
+            </div>
+          </div>          <motion.div
             className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12"
             initial="hidden"
             whileInView="visible"
