@@ -19,20 +19,22 @@ const staggerContainer = {
 };
 
 // ----------------------------------------------------------------
-//  Variant for paragraph lines to create a staggered "ripple" effect
 const paragraphLine = {
   hidden: { opacity: 0, y: -10 },
-  visible: (custom:number) => ({
+  visible: (custom: number) => ({
     opacity: 1,
     y: 0,
     transition: {
-      delay: custom, // Each line uses a delay based on its index (custom value)
-      type: "spring",
-      stiffness: 70,
-      damping: 20,
+      // Each line's animation is delayed based on its index (custom multiplier)
+      delay: custom * 0.15,
+      type: "tween",
+      duration: 1.0,
+      // A gentle cubic-bezier easing function for smooth, fluid motion
+      ease: [0.42, 0, 0.58, 1],
     },
   }),
 };
+
 // ----------------------------------------------------------------
 
 export default function Page() {
