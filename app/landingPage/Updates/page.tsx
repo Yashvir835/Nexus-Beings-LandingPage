@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 
 // Animation variants for text elements
 const textVariant = {
@@ -13,16 +13,56 @@ const textVariant = {
   }),
 };
 
-// Variant for arrow hover animation using keyframes
-const arrowHoverVariant = {
-  hover: {
-    x: [0, 15, -14, 0],
-    opacity: [1, 0, 1, 1],
-    transition: { duration: 0.6, ease: 'easeInOut' },
-  },
-};
+
 
 export default function Page() {
+  const arrowControlsDocumentation = useAnimation(); // For the Comapny documentation
+  const arrowControlsCareer = useAnimation(); // For the Career Options
+  const arrowControlsNews = useAnimation(); // For the LATEST NEWS
+
+  // Handle arrow hover animation for the "Go to arrowControlsDocumentation" arrow
+  const handleArrowHoverDocumentation = async () => {
+    await arrowControlsDocumentation.start({
+      x: 15, // Move arrow right
+      opacity: 0,
+      transition: { duration: 0.4, ease: "easeInOut" },
+    });
+    arrowControlsDocumentation.set({ x: -14, opacity: 1 }); // Reset to starting position
+    await arrowControlsDocumentation.start({
+      x: 0,
+      transition: { duration: 0.2, ease: "easeInOut" },
+    });
+  };
+
+  // Handle arrow hover animation for the "Go to arrowControlsCareer" arrow
+  const handleArrowHoverCareer = async () => {
+    await arrowControlsCareer.start({
+      x: 15, // Move arrow right
+      opacity: 0,
+      transition: { duration: 0.4, ease: "easeInOut" },
+    });
+    arrowControlsCareer.set({ x: -14, opacity: 1 }); // Reset to starting position
+    await arrowControlsCareer.start({
+      x: 0,
+      transition: { duration: 0.2, ease: "easeInOut" },
+    });
+  };
+
+
+  // Handle arrow hover animation for the "Go to arrowControlsNews" arrow
+  const handleArrowHoverNews = async () => {
+    await arrowControlsNews.start({
+      x: 15, // Move arrow right
+      opacity: 0,
+      transition: { duration: 0.4, ease: "easeInOut" },
+    });
+    arrowControlsNews.set({ x: -14, opacity: 1 }); // Reset to starting position
+    await arrowControlsNews.start({
+      x: 0,
+      transition: { duration: 0.2, ease: "easeInOut" },
+    });
+  };
+
   return (
     <div className="scrollbar-hide bg-white h-screen overflow-y-auto">
       {/* Outer container */}
@@ -66,11 +106,13 @@ export default function Page() {
               viewport={{ once: true }}
               transition={{ delay: 1 }}
               className="flex justify-center mt-12 md:justify-start items-center gap-6 cursor-pointer self-center md:self-start"
+              onHoverStart={handleArrowHoverDocumentation}
+
             >
               <div className="w-8 h-4 mt-1 rounded-full border border-white flex items-center justify-center relative">
                 <motion.svg
                   whileHover="hover"
-                  variants={arrowHoverVariant}
+                  animate={arrowControlsDocumentation}
                   width="8"
                   height="8"
                   viewBox="0 0 24 24"
@@ -136,13 +178,15 @@ export default function Page() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 1 }}
+              transition={{ delay: 0.2 }}
               className="flex justify-center md:justify-start items-center gap-6 cursor-pointer self-center md:self-start"
+              onHoverStart={handleArrowHoverCareer}
+
             >
               <div className="w-8 h-4 mt-1 rounded-full border border-blue-500 flex items-center justify-center relative">
                 <motion.svg
-                  whileHover="hover"
-                  variants={arrowHoverVariant}
+
+                  animate={arrowControlsCareer}
                   width="8"
                   height="8"
                   viewBox="0 0 24 24"
@@ -205,13 +249,14 @@ export default function Page() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 1 }}
+              transition={{ delay: 0.2 }}
               className="flex justify-center md:justify-start items-center gap-6 cursor-pointer self-center md:self-start"
+              onHoverStart={handleArrowHoverNews}
+
             >
               <div className="w-8 h-4 mt-1 rounded-full border border-blue-500 flex items-center justify-center relative">
                 <motion.svg
-                  whileHover="hover"
-                  variants={arrowHoverVariant}
+                  animate={arrowControlsNews}
                   width="8"
                   height="8"
                   viewBox="0 0 24 24"
